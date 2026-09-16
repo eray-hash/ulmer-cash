@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Work+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[#FAF9F6] text-navy-800 font-sans antialiased;
+}
+
+::selection {
+  @apply bg-gold-200 text-navy-900;
+}
+
+.font-display {
+  letter-spacing: -0.01em;
+}
+
+.kicker {
+  @apply font-display text-xs md:text-sm tracking-[0.28em] uppercase text-gold-600 font-semibold;
+}
+
+.divider-gold {
+  @apply h-px w-16 bg-gold-500;
+}
