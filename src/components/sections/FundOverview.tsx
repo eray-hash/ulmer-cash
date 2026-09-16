@@ -3,7 +3,7 @@ import SectionHeading from '../SectionHeading'
 const CARDS = [
   {
     label: 'Was wir tun',
-    text: 'Ein Investment, das sechs Asset-Klassen kombiniert, um eine Zielrendite von 10 % p.a. über 10 Jahre zu erreichen.',
+    text: 'Eine Kapitalanlage, die sechs Anlageklassen kombiniert, um eine Zielrendite von 10 % p.a. über 10 Jahre zu erreichen.',
   },
   {
     label: 'Wie wir es tun',
@@ -19,7 +19,7 @@ export default function FundOverview() {
   return (
     <section id="fonds" className="bg-white py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <SectionHeading kicker="Der Fonds" title="Executive Summary" />
+        <SectionHeading kicker="Der Fonds" title="Das Wichtigste in Kürze" />
 
         <div className="mt-14 grid gap-px overflow-hidden rounded-sm bg-navy-100 md:grid-cols-3">
           {CARDS.map((card) => (

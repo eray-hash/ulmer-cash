@@ -15,21 +15,21 @@ const PILLARS = [
   {
     icon: Layers3,
     title: 'Nachrangkapital',
-    text: 'Nachrangige Darlehen für Wachstumsvorhaben. Höherer Kupon plus Gewinnbeteiligung möglich.',
+    text: 'Nachrangige Darlehen für Wachstumsvorhaben. Höhere Zinsen plus Gewinnbeteiligung möglich.',
   },
   {
     icon: Cpu,
-    title: 'KI-Projekte',
+    title: 'KI-Projekte / Firmen',
     text: 'Beteiligungen an konkreten Anwendungen, z. B. Automatisierung, Cybersicherheit und Immobilientechnologie.',
   },
   {
     icon: Rocket,
-    title: 'Jungunternehmen',
-    text: 'Frühphasenfinanzierung im DACH-Raum. Ausstieg über Verkauf oder Folgefinanzierung.',
+    title: 'Jungunternehmen / Start-ups',
+    text: 'Frühphasenfinanzierung im deutschsprachigen Raum. Ausstieg über Verkauf oder Folgefinanzierung.',
   },
   {
     icon: ReceiptText,
-    title: 'Forderungsankauf',
+    title: 'Forderungsankauf / Rechnungszwischenfinanzierung',
     text: 'Ankauf von B2B-Rechnungen mit Abschlag. Schnell drehend, kurzfristig, planbar und sicher.',
   },
 ]
@@ -51,7 +51,7 @@ export default function Pillars() {
                 <span className="font-display text-xs font-bold text-navy-200 transition-colors group-hover:text-gold-500">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <div className="mt-4 flex h-11 w-11 items-center justify-center rounded-full bg-navy-800 text-gold-400">
+                <div className="mt-4 flex h-11 w-11 items-center justify-center rounded-full border border-navy-100 bg-navy-50 text-navy-800">
                   <Icon size={20} strokeWidth={1.75} />
                 </div>
                 <h3 className="mt-5 font-display text-lg font-bold text-navy-800">

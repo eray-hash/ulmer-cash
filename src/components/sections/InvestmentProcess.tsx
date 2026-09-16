@@ -2,18 +2,18 @@ import SectionHeading from '../SectionHeading'
 
 const STEPS = [
   'Erstgespräch und Zieldefinition',
-  'Due Diligence und Zeichnungsvereinbarung',
+  'Gründliche Prüfung und Zeichnungsvereinbarung',
   'Kapitalbereitstellung auf Treuhandkonto',
-  'Allokation nach Phasenplan',
-  'Quartalsreporting',
-  'Halbjährliche oder jährliche Ausschüttung',
+  'Ihr Kapital wird Schritt für Schritt angelegt',
+  'Alle drei Monate erhalten Sie einen Bericht zum Stand Ihrer Anlage',
+  'Jährliche Ausschüttung',
 ]
 
 export default function InvestmentProcess() {
   return (
-    <section id="prozess" className="bg-[#FAF9F6] py-24 md:py-32">
+    <section id="ablauf" className="bg-[#FAF9F6] py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <SectionHeading kicker="Ablauf" title="Investmentprozess" />
+        <SectionHeading kicker="Vorgehen" title="Ablauf" />
 
         <ol className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {STEPS.map((step, i) => (

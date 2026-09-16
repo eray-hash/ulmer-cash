@@ -7,7 +7,7 @@ const COLUMNS = [
     title: 'Sicherungen',
     items: [
       'Immobilien: Grundschulden, Sicherungsübereignung',
-      'Zwischenfinanzierung/Nachrangkapital: Sicherheiten, Bürgschaften, Geschäftsführerhaftung',
+      'Zwischenfinanzierung/Nachrangkapital: Sicherheiten, Bürgschaften',
       'Forderungsankauf: Bonitätsprüfung der Schuldner, Rückgriffsrechte',
     ],
   },
@@ -24,7 +24,7 @@ const COLUMNS = [
     icon: Scale,
     title: 'Rechtlich',
     items: [
-      'Due Diligence über eine Anwaltsgesellschaft mbH',
+      'Gründliche Prüfung über eine Anwaltsgesellschaft mbH',
       'Einhaltung von WpHG, KAGB und DSGVO',
     ],
   },
@@ -32,9 +32,9 @@ const COLUMNS = [
 
 export default function RiskManagement() {
   return (
-    <section id="risiko" className="bg-navy-900 py-24 text-white md:py-32">
+    <section id="risiko" className="bg-white py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <SectionHeading kicker="Verantwortung" title="Risikomanagement" dark />
+        <SectionHeading kicker="Verantwortung" title="Risikomanagement" />
 
         <div className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
           {COLUMNS.map((col) => {
@@ -42,14 +42,14 @@ export default function RiskManagement() {
             return (
               <div key={col.title}>
                 <div className="flex items-center gap-3">
-                  <Icon size={20} className="text-gold-400" strokeWidth={1.75} />
-                  <h3 className="font-display text-base font-bold uppercase tracking-[0.1em] text-white">
+                  <Icon size={20} className="text-gold-600" strokeWidth={1.75} />
+                  <h3 className="font-display text-base font-bold uppercase tracking-[0.1em] text-navy-800">
                     {col.title}
                   </h3>
                 </div>
-                <ul className="mt-5 space-y-3 border-l border-white/10 pl-5">
+                <ul className="mt-5 space-y-3 border-l-2 border-navy-100 pl-5">
                   {col.items.map((item) => (
-                    <li key={item} className="text-sm leading-relaxed text-navy-200">
+                    <li key={item} className="text-sm leading-relaxed text-navy-600">
                       {item}
                     </li>
                   ))}

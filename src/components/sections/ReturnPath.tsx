@@ -1,11 +1,11 @@
 import SectionHeading from '../SectionHeading'
 
 const ROWS = [
-  { period: 'Jahr 1', value: 4, note: 'Aufbau, Due Diligence, Liquiditätsreserve' },
-  { period: 'Jahr 2', value: 6, note: 'Erste Verkäufe, Hochlauf der Pipeline' },
-  { period: 'Jahr 3', value: 7, note: 'Skalierung der Immobilientransaktionen' },
-  { period: 'Jahr 4–7', value: 8, note: 'Volle Allokation über alle Säulen' },
-  { period: 'Jahr 8', value: 9, note: 'Wiederanlage, Skaleneffekte' },
+  { period: 'Jahr 1', value: 4, note: 'Aufbau, gründliche Prüfung, Liquiditätsreserve' },
+  { period: 'Jahr 2', value: 6, note: 'Erste Verkäufe, mehr Projekte in Vorbereitung' },
+  { period: 'Jahr 3', value: 7, note: 'Mehr Immobiliengeschäfte' },
+  { period: 'Jahr 4–7', value: 8, note: 'Kapital ist auf alle sechs Säulen verteilt' },
+  { period: 'Jahr 8', value: 9, note: 'Wiederanlage, das Geschäft wird immer effizienter' },
   { period: 'Jahr 9–10', value: 10, note: 'Reife Portfoliostruktur' },
 ]
 
@@ -81,8 +81,8 @@ export default function ReturnPath() {
 
             <div className="mt-8 border-t border-navy-100 pt-6">
               <p className="font-display text-lg font-bold text-navy-800">
-                Kumuliert über 10 Jahre:{' '}
-                <span className="text-gold-600">rund 2,12-faches Kapital.</span>
+                Beispielrechnung: Aus 100.000&nbsp;€ werden rechnerisch{' '}
+                <span className="text-gold-600">rund 212.000&nbsp;€ nach 10 Jahren.</span>
               </p>
               <p className="mt-2 text-xs text-navy-400">
                 Zielrendite. Keine Garantie. Abweichungen möglich.
