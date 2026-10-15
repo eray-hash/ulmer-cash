@@ -32,7 +32,7 @@ export default {
         },
       },
       fontFamily: {
-        display: ['"Sora"', 'sans-serif'],
+        display: ['"Fraunces"', 'serif'],
         sans: ['"Work Sans"', 'sans-serif'],
       },
     },

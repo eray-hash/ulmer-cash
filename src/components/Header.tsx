@@ -18,9 +18,10 @@ export default function Header() {
   const location = useLocation()
   const navigate = useNavigate()
   const isHome = location.pathname === '/'
+  const transparent = isHome && !scrolled && !menuOpen
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16)
+    const onScroll = () => setScrolled(window.scrollY > window.innerHeight * 0.7)
     onScroll()
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
@@ -40,10 +41,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b bg-white/95 backdrop-blur-sm transition-all duration-300 ${
-        scrolled || !isHome
-          ? 'border-navy-100 shadow-[0_1px_12px_-4px_rgba(15,23,42,0.12)]'
-          : 'border-navy-100/60'
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
+        transparent
+          ? 'border-transparent bg-transparent'
+          : 'border-navy-100 bg-white/95 shadow-[0_1px_12px_-4px_rgba(15,23,42,0.12)] backdrop-blur-sm'
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
@@ -54,10 +55,18 @@ export default function Header() {
         >
           <span className="h-7 w-[3px] bg-gold-500 transition-all group-hover:h-8" />
           <span className="flex flex-col leading-tight">
-            <span className="font-display text-[13px] md:text-sm font-bold uppercase tracking-[0.22em] text-navy-800">
+            <span
+              className={`font-display text-[13px] md:text-sm font-bold uppercase tracking-[0.22em] transition-colors ${
+                transparent ? 'text-white drop-shadow-sm' : 'text-navy-800'
+              }`}
+            >
               Ulmer Cash
             </span>
-            <span className="text-[9px] uppercase tracking-[0.18em] text-navy-400">
+            <span
+              className={`text-[9px] uppercase tracking-[0.18em] transition-colors ${
+                transparent ? 'text-white/80' : 'text-navy-400'
+              }`}
+            >
               von Andreas Mayer Holding
             </span>
           </span>
@@ -68,7 +77,9 @@ export default function Header() {
             <button
               key={item.id}
               onClick={() => goToSection(item.id)}
-              className="whitespace-nowrap font-display text-[12px] font-medium uppercase tracking-[0.06em] text-navy-600 transition-colors hover:text-gold-600 xl:text-[13px] xl:tracking-[0.08em]"
+              className={`whitespace-nowrap font-display text-[12px] font-medium uppercase tracking-[0.06em] transition-colors hover:text-gold-500 xl:text-[13px] xl:tracking-[0.08em] ${
+                transparent ? 'text-white drop-shadow-sm' : 'text-navy-600 hover:text-gold-600'
+              }`}
             >
               {item.label}
             </button>
@@ -77,7 +88,9 @@ export default function Header() {
 
         <button
           onClick={() => setMenuOpen((v) => !v)}
-          className="flex h-9 w-9 items-center justify-center text-navy-800 lg:hidden"
+          className={`flex h-9 w-9 items-center justify-center lg:hidden ${
+            transparent ? 'text-white' : 'text-navy-800'
+          }`}
           aria-label="Menü öffnen"
         >
           {menuOpen ? <X size={22} /> : <Menu size={22} />}
