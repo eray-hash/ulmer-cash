@@ -1,4 +1,4 @@
-import heroImage from '../../assets/hero.jpg'
+import heroImage from '../../assets/ulm-muenster.jpg'
 import { ArrowDown } from 'lucide-react'
 
 export default function Hero() {
@@ -47,9 +47,12 @@ export default function Hero() {
         <div className="mx-auto w-full max-w-sm overflow-hidden rounded-sm border border-gold-300/60 bg-white p-2 shadow-[0_20px_50px_-25px_rgba(15,23,42,0.25)] lg:max-w-none">
           <img
             src={heroImage}
-            alt="Skyline bei Sonnenuntergang"
+            alt="Ulmer Münster am Münsterplatz in Ulm"
             className="h-64 w-full rounded-[2px] object-cover md:h-80 lg:h-[420px]"
           />
+          <p className="px-2 pt-2 text-center text-[11px] uppercase tracking-[0.14em] text-navy-300">
+            Ulmer Münster, Münsterplatz
+          </p>
         </div>
       </div>
     </section>
