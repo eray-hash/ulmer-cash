@@ -12,8 +12,9 @@ export default function Hero() {
       ticking = true
       requestAnimationFrame(() => {
         if (imgRef.current) {
-          const offset = Math.min(window.scrollY, 900) * 0.22
-          const scale = 1.12 + Math.min(window.scrollY, 900) * 0.00018
+          const capped = Math.min(window.scrollY, 1400)
+          const offset = capped * 0.38
+          const scale = 1.18 + capped * 0.00025
           imgRef.current.style.transform = `translateY(${offset}px) scale(${scale})`
         }
         ticking = false
@@ -33,17 +34,19 @@ export default function Hero() {
   }
 
   return (
-    <section id="hero" className="bg-[#FAF8F3]">
-      <div className="h-[80vh] w-full overflow-hidden sm:h-[88vh] md:h-[92vh]">
-        <img
-          ref={imgRef}
-          src={heroImage}
-          alt="Ulmer Münster am Münsterplatz in Ulm"
-          className="h-full w-full scale-[1.12] object-cover object-[center_8%] will-change-transform"
-        />
+    <section id="hero" className="relative bg-[#FAF8F3]">
+      <div className="relative h-[130vh] sm:h-[150vh] md:h-[165vh]">
+        <div className="sticky top-0 h-[80vh] w-full overflow-hidden sm:h-[88vh] md:h-[92vh]">
+          <img
+            ref={imgRef}
+            src={heroImage}
+            alt="Ulmer Münster am Münsterplatz in Ulm"
+            className="h-full w-full scale-[1.18] object-cover object-[center_8%] will-change-transform"
+          />
+        </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-5 pb-20 pt-12 md:px-8 md:pt-16">
+      <div className="relative z-10 mx-auto max-w-7xl bg-[#FAF8F3] px-5 pb-20 pt-12 md:px-8 md:pt-16">
         <p className="kicker text-gold-600">Andreas Mayer Holding</p>
         <h1 className="mt-5 max-w-3xl font-display text-5xl font-semibold leading-[0.98] text-navy-900 sm:text-6xl md:text-7xl">
           Ulmer Cash
