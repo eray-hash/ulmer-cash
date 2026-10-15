@@ -1,11 +1,12 @@
 import SectionHeading from '../SectionHeading'
+import Reveal from '../Reveal'
 import { Phone, Mail, MapPin } from 'lucide-react'
 import interiorImage from '../../assets/ulm-muenster-interior.jpg'
 
 export default function Contact() {
   return (
     <section id="kontakt" className="bg-white py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
+      <Reveal className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading kicker="Kontakt" title="Sprechen Sie mit uns" />
 
         <div className="mt-14 grid gap-14 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:gap-16">
@@ -63,7 +64,7 @@ export default function Contact() {
             </p>
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   )
 }

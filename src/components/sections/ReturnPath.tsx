@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import SectionHeading from '../SectionHeading'
 
 const ROWS = [
@@ -16,6 +17,8 @@ const TOP_Y = 20
 const MAX_VAL = 10
 const BAR_W = 62
 const GAP = 32
+const START_CAPITAL = 100000
+const END_CAPITAL = 212000
 
 function barX(i: number) {
   const totalW = ROWS.length * BAR_W + (ROWS.length - 1) * GAP
@@ -23,14 +26,50 @@ function barX(i: number) {
   return startX + i * (BAR_W + GAP)
 }
 
+function easeOutCubic(t: number) {
+  return 1 - Math.pow(1 - t, 3)
+}
+
+function fmtEUR(n: number) {
+  return Math.round(n).toLocaleString('de-DE') + ' €'
+}
+
 export default function ReturnPath() {
+  const chartRef = useRef<HTMLDivElement>(null)
+  const [progress, setProgress] = useState(0)
+
+  useEffect(() => {
+    let ticking = false
+    const onScroll = () => {
+      if (ticking) return
+      ticking = true
+      requestAnimationFrame(() => {
+        const el = chartRef.current
+        if (el) {
+          const rect = el.getBoundingClientRect()
+          const start = window.innerHeight * 0.9
+          const end = window.innerHeight * 0.45
+          const raw = (start - rect.top) / (start - end)
+          setProgress(Math.min(1, Math.max(0, raw)))
+        }
+        ticking = false
+      })
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const eased = easeOutCubic(progress)
+  const currentValue = START_CAPITAL + (END_CAPITAL - START_CAPITAL) * eased
+
   return (
     <section id="renditepfad" className="bg-white py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading kicker="Der Weg zur Zielrendite" title="Renditepfad über 10 Jahre" />
 
         <div className="mt-14 grid gap-12 lg:grid-cols-5 lg:gap-16">
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3" ref={chartRef}>
             <svg viewBox={`0 0 ${CHART_W} ${CHART_H}`} className="w-full" role="img" aria-label="Balkendiagramm Renditepfad">
               {[2, 4, 6, 8, 10].map((g) => {
                 const y = BASE_Y - (g / MAX_VAL) * (BASE_Y - TOP_Y)
@@ -48,9 +87,24 @@ export default function ReturnPath() {
                 const h = (row.value / MAX_VAL) * (BASE_Y - TOP_Y)
                 const x = barX(i)
                 const y = BASE_Y - h
+                const stagger = i * 0.09
+                const barProgress = Math.min(1, Math.max(0, (progress - stagger) / (1 - 5 * 0.09)))
+                const barEased = easeOutCubic(barProgress)
                 return (
                   <g key={row.period}>
-                    <rect x={x} y={y} width={BAR_W} height={h} fill="#C9A24B" rx={2} />
+                    <rect
+                      x={x}
+                      y={y}
+                      width={BAR_W}
+                      height={h}
+                      fill="#C9A24B"
+                      rx={2}
+                      style={{
+                        transform: `scaleY(${barEased})`,
+                        transformOrigin: `${x + BAR_W / 2}px ${BASE_Y}px`,
+                        transition: 'transform 0.05s linear',
+                      }}
+                    />
                     <text
                       x={x + BAR_W / 2}
                       y={y - 10}
@@ -58,7 +112,8 @@ export default function ReturnPath() {
                       fontSize="13"
                       fontWeight={700}
                       fill="#0F172A"
-                      fontFamily="Sora, sans-serif"
+                      fontFamily="Fraunces, serif"
+                      style={{ opacity: barEased }}
                     >
                       {row.value}%
                     </text>
@@ -82,7 +137,10 @@ export default function ReturnPath() {
             <div className="mt-8 border-t border-navy-100 pt-6">
               <p className="font-display text-lg font-bold text-navy-800">
                 Beispielrechnung: Aus 100.000&nbsp;€ werden rechnerisch{' '}
-                <span className="text-gold-600">rund 212.000&nbsp;€ nach 10 Jahren.</span>
+                <span className="inline-block min-w-[9ch] text-gold-600 tabular-nums">
+                  rund {fmtEUR(currentValue)}
+                </span>{' '}
+                nach 10 Jahren.
               </p>
               <p className="mt-2 text-xs text-navy-400">
                 Zielrendite. Keine Garantie. Abweichungen möglich.

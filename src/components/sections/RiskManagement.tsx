@@ -1,4 +1,5 @@
 import SectionHeading from '../SectionHeading'
+import Reveal from '../Reveal'
 import { ShieldCheck, SlidersHorizontal, Scale } from 'lucide-react'
 
 const COLUMNS = [
@@ -33,7 +34,7 @@ const COLUMNS = [
 export default function RiskManagement() {
   return (
     <section id="risiko" className="bg-white py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
+      <Reveal className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading kicker="Verantwortung" title="Risikomanagement" />
 
         <div className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
@@ -58,7 +59,7 @@ export default function RiskManagement() {
             )
           })}
         </div>
-      </div>
+      </Reveal>
     </section>
   )
 }

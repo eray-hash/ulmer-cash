@@ -1,4 +1,5 @@
 import SectionHeading from '../SectionHeading'
+import Reveal from '../Reveal'
 import { XCircle, CheckCircle2 } from 'lucide-react'
 
 const SITUATION = [
@@ -17,7 +18,7 @@ const ZIELGRUPPEN = [
 export default function MarketOpportunity() {
   return (
     <section id="marktchance" className="bg-white py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
+      <Reveal className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading kicker="Marktchance" title="Warum ein Fonds mit sechs Säulen" />
 
         <div className="mt-14 grid gap-12 lg:grid-cols-2 lg:gap-16">
@@ -64,7 +65,7 @@ export default function MarketOpportunity() {
             ))}
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   )
 }

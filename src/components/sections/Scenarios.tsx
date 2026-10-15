@@ -1,4 +1,5 @@
 import SectionHeading from '../SectionHeading'
+import Reveal from '../Reveal'
 
 const SCENARIOS = [
   {
@@ -30,7 +31,7 @@ const SCENARIOS = [
 export default function Scenarios() {
   return (
     <section id="szenarien" className="bg-[#FAF9F6] py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
+      <Reveal className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading kicker="Modellrechnung" title="Szenarien" />
 
         <div className="mt-14 overflow-hidden rounded-sm border border-navy-100 bg-white">
@@ -73,7 +74,7 @@ export default function Scenarios() {
           Alle Werte Modellrechnungen auf Basis von Marktannahmen. Keine Zusicherung. Keine
           Garantie.
         </p>
-      </div>
+      </Reveal>
     </section>
   )
 }

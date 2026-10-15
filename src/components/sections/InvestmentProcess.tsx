@@ -1,4 +1,5 @@
 import SectionHeading from '../SectionHeading'
+import Reveal from '../Reveal'
 
 const STEPS = [
   'Erstgespräch und Zieldefinition',
@@ -12,7 +13,7 @@ const STEPS = [
 export default function InvestmentProcess() {
   return (
     <section id="ablauf" className="bg-[#FAF9F6] py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
+      <Reveal className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading kicker="Vorgehen" title="Ablauf" />
 
         <ol className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -43,7 +44,7 @@ export default function InvestmentProcess() {
             </p>
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   )
 }

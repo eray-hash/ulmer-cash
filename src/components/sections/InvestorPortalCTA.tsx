@@ -1,10 +1,11 @@
 import { ArrowUpRight } from 'lucide-react'
 import PortalMockup from './PortalMockup'
+import Reveal from '../Reveal'
 
 export default function InvestorPortalCTA() {
   return (
     <section className="bg-[#FAF8F3] py-20 md:py-28">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 md:px-8 lg:grid-cols-[1fr_1fr] lg:gap-16">
+      <Reveal className="mx-auto grid max-w-7xl items-center gap-12 px-5 md:px-8 lg:grid-cols-[1fr_1fr] lg:gap-16">
         <div>
           <p className="kicker text-gold-600">Für Investoren</p>
           <h2 className="mt-4 max-w-md font-display text-2xl font-bold leading-tight text-navy-900 sm:text-3xl">
@@ -27,7 +28,7 @@ export default function InvestorPortalCTA() {
         </div>
 
         <PortalMockup />
-      </div>
+      </Reveal>
     </section>
   )
 }

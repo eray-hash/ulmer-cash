@@ -1,4 +1,5 @@
 import SectionHeading from '../SectionHeading'
+import Reveal from '../Reveal'
 import { Building2, Clock3, Layers3, Cpu, Rocket, ReceiptText } from 'lucide-react'
 
 const PILLARS = [
@@ -37,7 +38,7 @@ const PILLARS = [
 export default function Pillars() {
   return (
     <section id="saeulen" className="bg-[#FAF9F6] py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
+      <Reveal className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading kicker="Die Strategie" title="Sechs Säulen, eine Zielrendite" />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -62,7 +63,7 @@ export default function Pillars() {
             )
           })}
         </div>
-      </div>
+      </Reveal>
     </section>
   )
 }
