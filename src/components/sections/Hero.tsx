@@ -12,8 +12,9 @@ export default function Hero() {
       ticking = true
       requestAnimationFrame(() => {
         if (imgRef.current) {
-          const offset = Math.min(window.scrollY, 600) * 0.12
-          imgRef.current.style.transform = `translateY(${offset}px) scale(1.08)`
+          const offset = Math.min(window.scrollY, 900) * 0.22
+          const scale = 1.12 + Math.min(window.scrollY, 900) * 0.00018
+          imgRef.current.style.transform = `translateY(${offset}px) scale(${scale})`
         }
         ticking = false
       })
@@ -33,12 +34,12 @@ export default function Hero() {
 
   return (
     <section id="hero" className="bg-[#FAF8F3]">
-      <div className="h-[48vh] w-full overflow-hidden sm:h-[58vh] md:h-[72vh]">
+      <div className="h-[80vh] w-full overflow-hidden sm:h-[88vh] md:h-[92vh]">
         <img
           ref={imgRef}
           src={heroImage}
           alt="Ulmer Münster am Münsterplatz in Ulm"
-          className="h-full w-full scale-[1.08] object-cover object-top will-change-transform"
+          className="h-full w-full scale-[1.12] object-cover object-[center_8%] will-change-transform"
         />
       </div>
 

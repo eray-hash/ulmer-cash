@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import SectionHeading from '../SectionHeading'
+import { ArrowRight } from 'lucide-react'
 
 const ROWS = [
   { period: 'Jahr 1', value: 4, note: 'Aufbau, gründliche Prüfung, Liquiditätsreserve' },
@@ -68,8 +69,27 @@ export default function ReturnPath() {
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading kicker="Der Weg zur Zielrendite" title="Renditepfad über 10 Jahre" />
 
-        <div className="mt-14 grid gap-12 lg:grid-cols-5 lg:gap-16">
-          <div className="lg:col-span-3" ref={chartRef}>
+        <div ref={chartRef} className="mt-14 border-y border-navy-100 py-10 md:py-14">
+          <p className="font-display text-xs font-bold uppercase tracking-[0.18em] text-gold-600">
+            Beispielrechnung
+          </p>
+          <div className="mt-4 flex flex-wrap items-center gap-4 sm:gap-6">
+            <span className="font-display text-2xl text-navy-300 sm:text-3xl">100.000&nbsp;€</span>
+            <ArrowRight size={28} className="text-gold-500" />
+            <span className="font-display text-5xl font-bold tabular-nums text-navy-900 sm:text-6xl md:text-7xl">
+              {fmtEUR(currentValue)}
+            </span>
+          </div>
+          <p className="mt-3 text-sm text-navy-500">
+            Rechnerischer Kapitalrückfluss nach 10 Jahren entlang des Zielrenditepfads.
+          </p>
+          <p className="mt-1 text-xs text-navy-400">
+            Zielrendite. Keine Garantie. Abweichungen möglich.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-12 lg:grid-cols-5 lg:gap-16">
+          <div className="lg:col-span-3">
             <svg viewBox={`0 0 ${CHART_W} ${CHART_H}`} className="w-full" role="img" aria-label="Balkendiagramm Renditepfad">
               {[2, 4, 6, 8, 10].map((g) => {
                 const y = BASE_Y - (g / MAX_VAL) * (BASE_Y - TOP_Y)
@@ -133,19 +153,6 @@ export default function ReturnPath() {
 
               <line x1={30} x2={CHART_W - 10} y1={BASE_Y} y2={BASE_Y} stroke="#B4C0D9" strokeWidth={1.5} />
             </svg>
-
-            <div className="mt-8 border-t border-navy-100 pt-6">
-              <p className="font-display text-lg font-bold text-navy-800">
-                Beispielrechnung: Aus 100.000&nbsp;€ werden rechnerisch{' '}
-                <span className="inline-block min-w-[9ch] text-gold-600 tabular-nums">
-                  rund {fmtEUR(currentValue)}
-                </span>{' '}
-                nach 10 Jahren.
-              </p>
-              <p className="mt-2 text-xs text-navy-400">
-                Zielrendite. Keine Garantie. Abweichungen möglich.
-              </p>
-            </div>
           </div>
 
           <div className="lg:col-span-2">
