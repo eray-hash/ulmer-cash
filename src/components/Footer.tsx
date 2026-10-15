@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="flex items-center gap-2.5">
             <span className="h-5 w-[2px] bg-gold-500" />
             <span className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-navy-700">
-              Andreas Mayer Holding
+              Ulmer Cash
             </span>
           </div>
 

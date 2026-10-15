@@ -53,8 +53,13 @@ export default function Header() {
           className="group flex items-center gap-2.5"
         >
           <span className="h-7 w-[3px] bg-gold-500 transition-all group-hover:h-8" />
-          <span className="font-display text-[13px] md:text-sm font-bold uppercase tracking-[0.22em] text-navy-800">
-            Andreas Mayer Holding
+          <span className="flex flex-col leading-tight">
+            <span className="font-display text-[13px] md:text-sm font-bold uppercase tracking-[0.22em] text-navy-800">
+              Ulmer Cash
+            </span>
+            <span className="text-[9px] uppercase tracking-[0.18em] text-navy-400">
+              von Andreas Mayer Holding
+            </span>
           </span>
         </Link>
 

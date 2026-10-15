@@ -4,6 +4,10 @@ export default function Impressum() {
   return (
     <LegalPage title="Impressum">
       <div>
+        <p>„Ulmer Cash" ist ein Angebot der Andreas Mayer Holding UG (haftungsbeschränkt).</p>
+      </div>
+
+      <div>
         <p className="font-display font-semibold text-navy-800">
           Andreas Mayer Holding UG (haftungsbeschränkt)
         </p>
