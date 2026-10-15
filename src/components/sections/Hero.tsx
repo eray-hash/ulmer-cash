@@ -29,7 +29,7 @@ export default function Hero() {
   }
 
   const scrollToNext = () => {
-    document.getElementById('fonds')?.scrollIntoView({ behavior: 'smooth' })
+    document.getElementById('anlage')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
@@ -49,7 +49,7 @@ export default function Hero() {
           Ulmer Cash
         </h1>
         <p className="mt-4 max-w-xl font-display text-lg font-medium italic text-navy-600 sm:text-xl">
-          Breit gestreuter Investitionsfonds 2026
+          Breit gestreute Vermögensanlage 2026
         </p>
 
         <div className="mt-8 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-4">

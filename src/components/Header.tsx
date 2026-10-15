@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 
 const NAV_ITEMS = [
-  { id: 'fonds', label: 'Fonds' },
+  { id: 'anlage', label: 'Anlage' },
   { id: 'saeulen', label: 'Säulen' },
   { id: 'renditepfad', label: 'Renditepfad' },
   { id: 'szenarien', label: 'Szenarien' },

@@ -19,7 +19,7 @@ export default function MarketOpportunity() {
   return (
     <section id="marktchance" className="bg-white py-24 md:py-32">
       <Reveal className="mx-auto max-w-7xl px-5 md:px-8">
-        <SectionHeading kicker="Marktchance" title="Warum ein Fonds mit sechs Säulen" />
+        <SectionHeading kicker="Marktchance" title="Warum eine Vermögensanlage mit sechs Säulen" />
 
         <div className="mt-14 grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
@@ -43,7 +43,7 @@ export default function MarketOpportunity() {
             <div className="mt-5 flex items-start gap-3">
               <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-gold-600" />
               <p className="text-[15px] leading-relaxed text-navy-600">
-                Ein Fonds mit stufenweisem Aufbau: ertragsstarke Anlagen am Anfang,
+                Eine Vermögensanlage mit stufenweisem Aufbau: ertragsstarke Anlagen am Anfang,
                 wachstumsstarke Anlagen am Ende.
               </p>
             </div>

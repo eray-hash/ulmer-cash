@@ -18,9 +18,9 @@ const CARDS = [
 
 export default function FundOverview() {
   return (
-    <section id="fonds" className="bg-white py-24 md:py-32">
+    <section id="anlage" className="bg-white py-24 md:py-32">
       <Reveal className="mx-auto max-w-7xl px-5 md:px-8">
-        <SectionHeading kicker="Der Fonds" title="Das Wichtigste in Kürze" />
+        <SectionHeading kicker="Die Vermögensanlage" title="Das Wichtigste in Kürze" />
 
         <div className="mt-14 grid gap-px overflow-hidden rounded-sm bg-navy-100 md:grid-cols-3">
           {CARDS.map((card) => (
