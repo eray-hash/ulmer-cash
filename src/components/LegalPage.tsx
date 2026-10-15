@@ -8,7 +8,7 @@ export default function LegalPage({
   children: ReactNode
 }) {
   return (
-    <section className="bg-white pb-24 pt-36 md:pb-32 md:pt-44">
+    <section className="bg-white pb-24 pt-16 md:pb-32 md:pt-20">
       <div className="mx-auto max-w-3xl px-5 md:px-8">
         <p className="kicker">Rechtliches</p>
         <h1 className="mt-3 font-display text-3xl font-bold text-navy-800 md:text-4xl">
