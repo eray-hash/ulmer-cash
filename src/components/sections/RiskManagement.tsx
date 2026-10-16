@@ -33,7 +33,7 @@ const COLUMNS = [
 
 export default function RiskManagement() {
   return (
-    <section id="risiko" className="bg-white py-24 md:py-32">
+    <section id="risiko" className="bg-white py-16 md:py-24">
       <Reveal className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading kicker="Verantwortung" title="Risikomanagement" />
 

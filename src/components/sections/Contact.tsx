@@ -5,7 +5,7 @@ import interiorImage from '../../assets/ulm-muenster-interior.jpg'
 
 export default function Contact() {
   return (
-    <section id="kontakt" className="bg-white py-24 md:py-32">
+    <section id="kontakt" className="bg-white py-16 md:py-24">
       <Reveal className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading kicker="Kontakt" title="Sprechen Sie mit uns" />
 

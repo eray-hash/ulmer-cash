@@ -17,7 +17,7 @@ const ZIELGRUPPEN = [
 
 export default function MarketOpportunity() {
   return (
-    <section id="marktchance" className="bg-white py-24 md:py-32">
+    <section id="marktchance" className="bg-white py-16 md:py-24">
       <Reveal className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading kicker="Marktchance" title="Warum eine Vermögensanlage mit sechs Säulen" />
 

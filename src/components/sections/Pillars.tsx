@@ -50,7 +50,7 @@ export default function Pillars() {
   }
 
   return (
-    <section id="saeulen" className="bg-[#FAF9F6] py-24 md:py-32">
+    <section id="saeulen" className="bg-[#FAF9F6] py-16 md:py-24">
       <Reveal className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading kicker="Die Strategie" title="Sechs Säulen, eine Zielrendite" />

@@ -14,7 +14,7 @@ export default function Reveal({ children, className = '' }: { children: ReactNo
           observer.disconnect()
         }
       },
-      { threshold: 0.15, rootMargin: '0px 0px -80px 0px' },
+      { threshold: 0.01, rootMargin: '0px 0px 150px 0px' },
     )
     observer.observe(el)
     return () => observer.disconnect()

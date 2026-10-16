@@ -65,7 +65,7 @@ export default function ReturnPath() {
   const currentValue = START_CAPITAL + (END_CAPITAL - START_CAPITAL) * eased
 
   return (
-    <section id="renditepfad" className="bg-white py-24 md:py-32">
+    <section id="renditepfad" className="bg-white py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading kicker="Der Weg zur Zielrendite" title="Renditepfad über 10 Jahre" />
 
