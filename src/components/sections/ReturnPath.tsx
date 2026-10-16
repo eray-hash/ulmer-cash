@@ -21,33 +21,6 @@ const GAP = 32
 const START_CAPITAL = 100000
 const END_CAPITAL = 212000
 
-const SPARBUCH_CAPITAL = 116000
-const INFLATION_CAPITAL = 128000
-
-const COMPARE_ROWS = [
-  {
-    label: 'Klassisches Sparbuch (ca. 1,5 % p.a.)',
-    value: SPARBUCH_CAPITAL,
-    textColor: 'text-navy-500',
-    barColor: 'bg-navy-300',
-    note: 'Nominal etwas mehr. Real, nach Inflation, kaum spürbar.',
-  },
-  {
-    label: 'Kaufkrafterhalt bei Inflation (ca. 2,5 % p.a.)',
-    value: INFLATION_CAPITAL,
-    textColor: 'text-navy-600',
-    barColor: 'bg-navy-400',
-    note: 'So viel bräuchtest du nur, um die heutige Kaufkraft zu halten.',
-  },
-  {
-    label: 'Ulmer Cash – erwarteter Verlauf',
-    value: END_CAPITAL,
-    textColor: 'text-gold-700',
-    barColor: 'bg-gold-500',
-    note: 'Zielrendite. Keine Garantie. Abweichungen möglich.',
-  },
-]
-
 function barX(i: number) {
   const totalW = ROWS.length * BAR_W + (ROWS.length - 1) * GAP
   const startX = (CHART_W - totalW) / 2
@@ -113,39 +86,6 @@ export default function ReturnPath() {
           <p className="mt-1 text-xs text-navy-400">
             Zielrendite. Keine Garantie. Abweichungen möglich.
           </p>
-        </div>
-
-        <div className="border-b border-navy-100 py-10 md:py-14">
-          <p className="font-display text-xs font-bold uppercase tracking-[0.18em] text-gold-600">
-            Warum nicht einfach das Sparbuch?
-          </p>
-          <h3 className="mt-2 max-w-xl font-display text-xl font-bold text-navy-800 sm:text-2xl">
-            Inflation und Sparbuch lassen dein Geld kaum wachsen
-          </h3>
-          <p className="mt-3 max-w-xl text-sm leading-relaxed text-navy-500">
-            Aus 100.000&nbsp;€ nach 10 Jahren, je nach Weg, gerechnet mit den jeweiligen
-            Beispielzinsen.
-          </p>
-
-          <div className="mt-8 space-y-6">
-            {COMPARE_ROWS.map((row) => (
-              <div key={row.label}>
-                <div className="flex items-baseline justify-between gap-4">
-                  <span className="text-sm font-semibold text-navy-700">{row.label}</span>
-                  <span className={`font-display text-lg font-bold ${row.textColor}`}>
-                    {fmtEUR(row.value)}
-                  </span>
-                </div>
-                <div className="mt-2 h-3 w-full overflow-hidden rounded-full bg-navy-50">
-                  <div
-                    className={`h-full rounded-full ${row.barColor}`}
-                    style={{ width: `${(row.value / END_CAPITAL) * 100 * eased}%` }}
-                  />
-                </div>
-                <p className="mt-1 text-xs text-navy-400">{row.note}</p>
-              </div>
-            ))}
-          </div>
         </div>
 
         <div className="mt-12 grid gap-12 lg:grid-cols-5 lg:gap-16">

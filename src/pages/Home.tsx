@@ -3,6 +3,7 @@ import FundOverview from '../components/sections/FundOverview'
 import MarketOpportunity from '../components/sections/MarketOpportunity'
 import Pillars from '../components/sections/Pillars'
 import ReturnPath from '../components/sections/ReturnPath'
+import SparbuchVergleich from '../components/sections/SparbuchVergleich'
 import Scenarios from '../components/sections/Scenarios'
 import RiskManagement from '../components/sections/RiskManagement'
 import InvestmentProcess from '../components/sections/InvestmentProcess'
@@ -17,6 +18,7 @@ export default function Home() {
       <MarketOpportunity />
       <Pillars />
       <ReturnPath />
+      <SparbuchVergleich />
       <Scenarios />
       <RiskManagement />
       <InvestmentProcess />
