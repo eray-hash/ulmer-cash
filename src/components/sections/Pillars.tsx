@@ -35,11 +35,52 @@ const PILLARS = [
   },
 ]
 
+const BAR_HEIGHTS = [34, 44, 54, 64, 74, 86]
+
+function PillarGlyphs() {
+  const barW = 22
+  const gap = 14
+  const viewH = 94
+  const baseY = 90
+  return (
+    <svg
+      viewBox={`0 0 ${BAR_HEIGHTS.length * (barW + gap)} ${viewH}`}
+      className="h-16 w-auto shrink-0 sm:h-20"
+      role="img"
+      aria-label="Sinnbild der sechs Säulen als wachsende Balken"
+    >
+      {BAR_HEIGHTS.map((h, i) => (
+        <rect
+          key={i}
+          x={i * (barW + gap)}
+          y={baseY - h}
+          width={barW}
+          height={h}
+          rx={3}
+          fill={i === BAR_HEIGHTS.length - 1 ? '#C9A24B' : '#DDBE7A'}
+          opacity={0.55 + i * 0.08}
+        />
+      ))}
+      <line
+        x1={0}
+        x2={BAR_HEIGHTS.length * (barW + gap) - gap}
+        y1={baseY}
+        y2={baseY}
+        stroke="#DCE2EE"
+        strokeWidth={1.5}
+      />
+    </svg>
+  )
+}
+
 export default function Pillars() {
   return (
     <section id="saeulen" className="bg-[#FAF9F6] py-24 md:py-32">
       <Reveal className="mx-auto max-w-7xl px-5 md:px-8">
-        <SectionHeading kicker="Die Strategie" title="Sechs Säulen, eine Zielrendite" />
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <SectionHeading kicker="Die Strategie" title="Sechs Säulen, eine Zielrendite" />
+          <PillarGlyphs />
+        </div>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {PILLARS.map((pillar, i) => {
