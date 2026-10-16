@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import SectionHeading from '../SectionHeading'
 import Reveal from '../Reveal'
-import saeulenWachstum from '../../assets/saeulen-wachstum.png'
+import saeulenTempel from '../../assets/saeulen-tempel.png'
 import pillarImmobilien from '../../assets/pillar-immobilien.png'
 import pillarZwischenfinanzierung from '../../assets/pillar-zwischenfinanzierung.png'
 import pillarNachrangkapital from '../../assets/pillar-nachrangkapital.png'
@@ -55,9 +55,9 @@ export default function Pillars() {
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading kicker="Die Strategie" title="Sechs Säulen, eine Zielrendite" />
           <img
-            src={saeulenWachstum}
-            alt="Sinnbild für Wachstum: ansteigende Balken aus Goldmünzen"
-            className="h-28 w-auto shrink-0 object-contain sm:h-32"
+            src={saeulenTempel}
+            alt="Sinnbild der sechs Säulen: Tempel mit sechs Säulen"
+            className="h-24 w-auto shrink-0 object-contain sm:h-28"
           />
         </div>
 
