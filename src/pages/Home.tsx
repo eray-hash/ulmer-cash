@@ -2,6 +2,7 @@ import Hero from '../components/sections/Hero'
 import FundOverview from '../components/sections/FundOverview'
 import MarketOpportunity from '../components/sections/MarketOpportunity'
 import Pillars from '../components/sections/Pillars'
+import Volkswirtschaft from '../components/sections/Volkswirtschaft'
 import ReturnPath from '../components/sections/ReturnPath'
 import Scenarios from '../components/sections/Scenarios'
 import RiskManagement from '../components/sections/RiskManagement'
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <FundOverview />
       <MarketOpportunity />
+      <Volkswirtschaft />
       <Pillars />
       <ReturnPath />
       <Scenarios />
