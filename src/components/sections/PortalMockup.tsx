@@ -1,5 +1,8 @@
 // Stilisierte, beispielhafte Darstellung des echten Investoren-Portals (keine echten Kundendaten).
-const CHART_POINTS = [100, 104, 111, 119, 128, 141, 158, 178]
+// Ein Jahr: 250.000 € wachsen über 12 Monate gleichmäßig auf 268.400 € (+7,4 %) — Monatswerte.
+const START = 250_000
+const ENDE = 268_400
+const CHART_POINTS = Array.from({ length: 13 }, (_, m) => START * Math.pow(ENDE / START, m / 12))
 
 function buildPath(points: number[], width: number, height: number) {
   const max = Math.max(...points)
@@ -39,7 +42,7 @@ export default function PortalMockup() {
             <p className="mt-1 font-display text-xl font-bold text-navy-800">250.000&nbsp;€</p>
           </div>
           <div>
-            <p className="text-[11px] uppercase tracking-[0.1em] text-navy-400">Aktueller Wert</p>
+            <p className="text-[11px] uppercase tracking-[0.1em] text-navy-400">Wert nach 12 Monaten</p>
             <p className="mt-1 font-display text-xl font-bold text-navy-800">
               268.400&nbsp;€
               <span className="ml-2 text-sm font-semibold text-gold-600">+7,4&nbsp;%</span>
@@ -47,14 +50,15 @@ export default function PortalMockup() {
           </div>
         </div>
 
-        <svg viewBox="0 0 280 72" className="mt-6 w-full" role="img" aria-label="Beispielhafte Wertentwicklung">
+        <svg viewBox="0 0 280 72" className="mt-6 w-full" role="img" aria-label="Beispielhafte Wertentwicklung über 12 Monate">
           <path d={areaPath} fill="#FBF6EB" />
           <path d={linePath} fill="none" stroke="#C9A24B" strokeWidth={2} />
         </svg>
 
         <div className="mt-4 flex items-center justify-between text-[11px] text-navy-400">
-          <span>Jahr 1</span>
-          <span>Jahr 10</span>
+          <span>Monat 1</span>
+          <span>Wertentwicklung im ersten Jahr</span>
+          <span>Monat 12</span>
         </div>
       </div>
 
